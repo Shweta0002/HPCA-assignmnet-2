@@ -52,32 +52,18 @@ data/16384.in: data/generate
 
 
 run_sim: data/3.in data/5.in data/7.in data/9.in data/11.in data/13.in data/64.in data/128.in data/1024.in data/2048.in data/4096.in data/8192.in data/16384.in dilated_conv_sim
-	./dilated_conv_sim -i data/128.in -k data/64.in
-	./dilated_conv_sim -i data/4096.in -k data/3.in
-	./dilated_conv_sim -i data/4096.in -k data/5.in
-	./dilated_conv_sim -i data/4096.in -k data/7.in
-	./dilated_conv_sim -i data/4096.in -k data/9.in
-	./dilated_conv_sim -i data/4096.in -k data/11.in
-	./dilated_conv_sim -i data/4096.in -k data/13.in
-	./dilated_conv_sim -i data/4096.in -k data/64.in
-	./dilated_conv_sim -i data/8192.in -k data/3.in
-	./dilated_conv_sim -i data/8192.in -k data/5.in
-	./dilated_conv_sim -i data/8192.in -k data/7.in
-	./dilated_conv_sim -i data/8192.in -k data/9.in
+
+	
+	./dilated_conv_sim -i data/16384.in -k data/9.in
+	./dilated_conv_sim -i data/16384.in -k data/11.in
+	./dilated_conv_sim -i data/16384.in -k data/13.in
+	
 	
 run_server: data/128.in dilated_conv_server
-	./dilated_conv_server -i data/128.in -k data/64.in
-	./dilated_conv_server -i data/4096.in -k data/3.in
-	./dilated_conv_server -i data/4096.in -k data/5.in
-	./dilated_conv_server -i data/4096.in -k data/7.in
-	./dilated_conv_server -i data/4096.in -k data/9.in
-	./dilated_conv_server -i data/4096.in -k data/11.in
-	./dilated_conv_server -i data/4096.in -k data/13.in
-	./dilated_conv_server -i data/4096.in -k data/64.in
-	./dilated_conv_server -i data/8192.in -k data/3.in
-	./dilated_conv_server -i data/8192.in -k data/5.in
-	./dilated_conv_server -i data/8192.in -k data/7.in
-	./dilated_conv_server -i data/8192.in -k data/9.in
+	
+	./dilated_conv_server -i data/16384.in -k data/11.in
+	./dilated_conv_server -i data/16384.in -k data/13.in
+	
 
 clean:
 	rm -f dilated_conv_sim dilated_conv_server
